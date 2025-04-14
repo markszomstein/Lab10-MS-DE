@@ -40,29 +40,30 @@ class TestCalculator(unittest.TestCase):
 
     ######## Partner 1
     def test_multiply(self):
-        self.assertEqual(calculator.multiply(3, 4), 12)
-        self.assertEqual(calculator.multiply(-2, 5), -10)
-        self.assertEqual(calculator.multiply(0, 100), 0)
+        self.assertEqual(multiply(3, 4), 12)
+        self.assertEqual(multiply(-2, 5), -10)
+        self.assertEqual(multiply(0, 100), 0)
 
     def test_divide(self):
-        self.assertEqual(calculator.divide(2, 10), 5)
-        self.assertEqual(calculator.divide(4, 20), 5)
-        self.assertEqual(calculator.divide(1, 3), 3)
+        self.assertEqual(divide(2, 10), 5)
+        self.assertEqual(divide(4, 20), 5)
+        self.assertEqual(divide(1, 3), 3)
 
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
-            calculator.logarithm(0, 5)
+            logarithm(0, 5)
 
     def test_hypotenuse(self):
-        self.assertAlmostEqual(calculator.hypotenuse(3, 4), 5.0)
-        self.assertAlmostEqual(calculator.hypotenuse(0, 5), 5.0)
-        self.assertAlmostEqual(calculator.hypotenuse(-3, -4), 5.0)
+        self.assertAlmostEqual(hypotenuse(3, 4), 5.0)
+        self.assertAlmostEqual(hypotenuse(0, 5), 5.0)
+        self.assertAlmostEqual(hypotenuse(-3, -4), 5.0)
 
     def test_sqrt(self):
         with self.assertRaises(ValueError):
-            calculator.square_root(-9)
-        self.assertAlmostEqual(calculator.square_root(16), 4.0)
-        self.assertAlmostEqual(calculator.square_root(0), 0.0)
+            square_root(-9)
+        self.assertAlmostEqual(square_root(16), 4.0)
+        self.assertAlmostEqual(square_root(0), 0.0)
+
     ##########################
 
 # Do not touch this
