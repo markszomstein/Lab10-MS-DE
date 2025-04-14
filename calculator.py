@@ -27,7 +27,7 @@ def div(a, b):
     return b / a
 
 def logarithm(a, b):
-    if a <= 0 or (b <= 0 and b != 1):
+    if a <= 0 or b <= 0 or b == 1:
         raise ValueError("Logarithm base and argument must be positive; base must not be equal to 1")
     return math.log(b, a)
 
