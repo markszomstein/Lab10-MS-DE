@@ -16,7 +16,7 @@ class TestCalculator(unittest.TestCase):
     	self.assertEqual(subtract(-5, 10), -15, "Testing subtract with neg and pos int")
         self.assertEqual(subtract(-2, -9), 7, "Testing subtract with two neg ints")
         self.assertEqual(subtract(100, 0.25), 99.75, "Testing subtract with pos int and float")
-    # ##########################
+    ##########################
 
     ######## Partner 2
     def test_divide_by_zero(self): # 1 assertion
@@ -35,39 +35,35 @@ class TestCalculator(unittest.TestCase):
         # use same technique from test_divide_by_zero
         with self.assertRaises(ValueError):
             logarithm(0,125)
-    # ##########################
+    ##########################
 
 
+    ######## Partner 1
+    def test_multiply(self):
+        self.assertEqual(calculator.multiply(3, 4), 12)
+        self.assertEqual(calculator.multiply(-2, 5), -10)
+        self.assertEqual(calculator.multiply(0, 100), 0)
 
-def test_multiply(self):
-    self.assertEqual(calculator.multiply(3, 4), 12)
-    self.assertEqual(calculator.multiply(-2, 5), -10)
-    self.assertEqual(calculator.multiply(0, 100), 0)
+    def test_divide(self):
+        self.assertEqual(calculator.divide(2, 10), 5)
+        self.assertEqual(calculator.divide(4, 20), 5)
+        self.assertEqual(calculator.divide(1, 3), 3)
 
-def test_divide(self):
-    self.assertEqual(calculator.divide(2, 10), 5)
-    self.assertEqual(calculator.divide(4, 20), 5)
-    self.assertEqual(calculator.divide(1, 3), 3)
+    def test_log_invalid_argument(self):
+        with self.assertRaises(ValueError):
+            calculator.logarithm(0, 5)
 
-def test_log_invalid_argument(self):
-    with self.assertRaises(ValueError):
-        calculator.logarithm(0, 5)
+    def test_hypotenuse(self):
+        self.assertAlmostEqual(calculator.hypotenuse(3, 4), 5.0)
+        self.assertAlmostEqual(calculator.hypotenuse(0, 5), 5.0)
+        self.assertAlmostEqual(calculator.hypotenuse(-3, -4), 5.0)
 
-def test_hypotenuse(self):
-    self.assertAlmostEqual(calculator.hypotenuse(3, 4), 5.0)
-    self.assertAlmostEqual(calculator.hypotenuse(0, 5), 5.0)
-    self.assertAlmostEqual(calculator.hypotenuse(-3, -4), 5.0)
-
-def test_sqrt(self):
-    with self.assertRaises(ValueError):
-        calculator.square_root(-9)
-    self.assertAlmostEqual(calculator.square_root(16), 4.0)
-    self.assertAlmostEqual(calculator.square_root(0), 0.0)
-
-def test_divide_by_zero(self):
-    with self.assertRaises(ZeroDivisionError):
-        calculator.divide(0, 5)
-
+    def test_sqrt(self):
+        with self.assertRaises(ValueError):
+            calculator.square_root(-9)
+        self.assertAlmostEqual(calculator.square_root(16), 4.0)
+        self.assertAlmostEqual(calculator.square_root(0), 0.0)
+    ##########################
 
 # Do not touch this
 if __name__ == "__main__":
