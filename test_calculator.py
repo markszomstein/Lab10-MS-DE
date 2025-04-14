@@ -13,7 +13,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(add(100,0.25), 100.25, "Testing add with pos int and float")
 
     def test_subtract(self): # 3 assertions
-    	self.assertEqual(subtract(-5, 10), -15, "Testing subtract with neg and pos int")
+        self.assertEqual(subtract(-5, 10), -15, "Testing subtract with neg and pos int")
         self.assertEqual(subtract(-2, -9), 7, "Testing subtract with two neg ints")
         self.assertEqual(subtract(100, 0.25), 99.75, "Testing subtract with pos int and float")
     ##########################
